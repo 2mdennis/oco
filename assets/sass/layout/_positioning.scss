@@ -1,0 +1,56 @@
+//PREFIX
+////l__
+
+.l {
+    &__position {
+        &--flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+        }
+        &--abcenter {
+            @include centre;
+        }
+        &--flexVertical {
+            align-items: center;
+            display: flex;
+        }
+        &--flexCenter {
+            @include flexCentre;
+        }
+        &--center {
+            text-align: center;
+        }
+    }
+    &__panel {
+        height:40vh;
+        min-height: 35em;
+        position: relative;
+        h1 {
+            color: $secondaryColor;
+        }
+        &--full {
+            height: 100%;
+            min-height: 100vh;
+        }
+        &--event {
+            @include below($br-768) {
+                min-height: unset;
+                height: auto;
+                margin-bottom: 25px;
+            }
+            h1 {
+                font-family: $altFontFamily;
+                font-size: 50px;
+            }
+            h1, h2 {
+                color: $secondaryColor;
+            }
+            color: $secondaryColor;
+            p {
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

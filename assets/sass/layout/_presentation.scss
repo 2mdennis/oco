@@ -1,0 +1,27 @@
+//Prefix
+//l__
+
+.align__left {
+	text-align: left;
+}
+.align__center {
+	text-align: center;
+}
+.align__right {
+	text-align: right;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.error {
+	color: $errorColor;
+}
+.success {
+	color: $successColor;
+}
+.tertiary {
+	color: $tertiaryColor;
+}

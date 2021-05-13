@@ -1,0 +1,120 @@
+header {
+	padding: 25px 0px;
+	@include above($br-768) {
+		margin-left: 130px;
+	}
+	.header__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		> div {
+			flex: 1;
+		}
+		#burger {
+			cursor: pointer;
+			width: 20px;
+			height: 20px;
+			margin-top: -2px;
+			svg {
+				width: 20px;
+				height: 20px;
+				color: $tertiaryColor;
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
+		@include above($br-768) {
+			#burger {
+				display: none;
+			}
+		}
+		.logo__wrapper {
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			svg {
+				color: $tertiaryColor;
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+			@include below($br-1024) {
+				text-align: right;
+				justify-content: flex-end;
+			}
+		}
+		.logo {
+			height: 25px;
+			width: 300px;
+			@include below($br-768) {
+				height: 15px;
+				width: 200px;
+			}
+		}
+		.empty {
+			@include below($br-1024) {
+				display: none;
+			}
+		}
+	}
+	.header__wrapper2 {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@include above($br-768) {
+			margin-bottom: 35px;
+		}
+		
+		> div {
+			flex: 1;
+		}
+		#burger {
+			cursor: pointer;
+			width: 20px;
+			height: 20px;
+			margin-top: -2px;
+			svg {
+				width: 20px;
+				height: 20px;
+				color: $tertiaryColor;
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
+		@include above($br-768) {
+			#burger {
+				display: none;
+			}
+		}
+		.logo__wrapper {
+			@include below($br-768) {
+				display: none;
+			}
+			text-align: left;
+			display: flex;
+			align-items: center;
+			svg {
+				color: $tertiaryColor;
+				&:hover {
+					color: $primaryColor;
+				}
+			}
+		}
+		.title__wrapper {
+			text-align: right;
+		}
+		h1 {
+			font-family: $altFontFamily;
+            font-size: 30px;
+			color: $tertiaryColor;
+			text-transform: uppercase;
+			margin: 0px;
+			@include below($br-768) {
+				font-size: 20px;
+			}
+		}
+	}
+}

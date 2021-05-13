@@ -1,0 +1,23 @@
+#pagination {
+    padding: 40px 0px 20px 0px;
+    li {
+        padding: 0px 10px;
+        a {
+            color: $tertiaryColor;
+            opacity: 0.5;
+            &.direction {
+                opacity: 1;
+            }
+            svg {
+                width: 5px;
+                height: 10px;
+            }
+        }
+        &.active, &:hover {
+            a {
+                font-weight: bold;
+                opacity: 1;
+            }
+        }
+    }
+}

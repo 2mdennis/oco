@@ -1,0 +1,176 @@
+//MIXINS
+////Relative size
+@function relSize($pixels, $context : 16) {
+    $relSize: ($pixels / $context) * 1em;
+    @return $relSize;
+}
+
+////Golden ratio
+@function ratio($val : 16) {
+    $ratioVal: relSize(($val * $ratio), $val);
+    @return $ratioVal;
+}
+
+////Transparent
+@mixin lightenFromVar($color, $value : 0.2) {
+	background-color: $color;
+	background-color: rgba($color, $value);
+}
+
+////Form placeholder styles
+@mixin placeholder {
+	&::-webkit-input-placeholder {@content};
+	&:-moz-placeholder           {@content};
+	&::-moz-placeholder          {@content};
+	&:-ms-input-placeholder      {@content} ; 
+}
+
+////Center content with absolute positioning
+@mixin centre {
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+////Fill content
+@mixin fill {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+////Center content horizontally with absolute positioning
+@mixin centreY {
+	left: 50%;
+	position: absolute;
+	top: 0;
+	transform: translateY(-50%);
+}
+////Position child content in center of element with flex box
+@mixin flexCentre {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+////Style a scrollable element in webkit bl__rowsers
+@mixin scrollbar($scrollBg, $thumbBg, $scrollBoxShadow) {
+	&::-webkit-scrollbar {
+		background: $scrollBg;
+		border-radius: 10px;
+		box-shadow: inset 1px 1px 1px $scrollBoxShadow;
+		height: 5px;
+		-webkit-appearance: none;
+		width: 5px;
+	}
+	::-webkit-scrollbar-track {
+    	box-shadow: inset 0 0 6px $scrollBoxShadow;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $thumbBg;
+		border-radius: 10px;
+	}
+}
+
+@mixin pullRight {
+	@media (min-width: $maxWidth) {
+		margin-right: calc((-100vw + #{$maxWidth}) / 2 - 20px);
+		margin-left: 0;
+	}
+	@media (max-width: $maxWidth) {
+		margin-right: -20px;
+		margin-left: 0;
+	}
+	@media (max-width: 768px) {
+		margin-left: -20px;
+	}
+}
+@mixin pullLeft {
+	@media (min-width: $maxWidth) {
+		margin-left: calc((-100vw + #{$maxWidth}) / 2 - 20px);
+		margin-right: 0;
+	}
+	@media (max-width: $maxWidth) {
+		margin-left: -20px;
+		margin-right: 0;
+	}
+	@media (max-width: 768px) {
+		margin-right: -20px;
+	}
+}
+
+@mixin headings($maxHeadSize, $diff) {
+	h1 {
+		font-size: ((1 / 16) * $maxHeadSize) * 1em;
+	}
+	@for $i from 2 to 7 {
+		$fSize: $maxHeadSize * $diff;
+		$val: (1 / 16) * $fSize;
+		h#{$i} {
+			font-size:  unquote("$val#{em}");
+		}
+		$maxHeadSize: $fSize;
+	}
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+//MEDIA QUERIES
+$br-360: 360px;
+$br-375: 375px;
+$br-480: 480px;
+$br-650: 650px;
+$br-768: 768px;
+$br-960: 960px;
+$br-1024: 1024px;
+$br-1280: 1280px;
+$br-1366: 1366px;
+$br-1500: 1500px;
+$br-800: 800px;
+$br-retina: "-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx";
+
+@mixin below($break) {
+	@media (max-width: $break) {
+		@content;
+	}
+}
+@mixin above($break) {
+	@media (min-width: unquote("#{$break + 1px}")) {
+		@content;
+	}
+}
+@mixin between($smallest, $largest) {
+	@media (min-width: unquote("#{$smallest + 1px}")) and (max-width: $largest) {
+		@content;
+	}
+}
+////RETINA
+@mixin retina {
+	@media only screen and ($retina) {
+		@content;
+	}
+}

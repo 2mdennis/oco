@@ -1,0 +1,79 @@
+//Prefix
+////c__hero
+
+#myaccount {
+	.myaccount__form__wrapper {
+		.icon {
+			height: 70px;
+			margin-bottom: 10px;
+			width: 70px;
+		}
+		.title {
+			margin-bottom: 15px;
+			margin-top: 25px;
+			color: $tertiaryColor;
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
+		.form__row input[type="checkbox"] + label,
+		.form__row input[type="radio"] + label {
+			color: $textColor;
+		}
+		.form__row input[type="checkbox"] + label::before,
+		.form__row input[type="radio"] + label::before {
+			border: 1px solid #c2bebf;
+		}
+		input {
+			border: 1px solid $lightBlue;
+		}
+		.summary__section {
+			height: 100%;
+			position: relative;
+			@include below($br-1024) {
+				margin-bottom: 50px;
+			}
+			.pushBottom {
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				margin-top: 50px;
+				@include below($br-1024) {
+					position: relative;
+				}
+			}
+		}
+		form {
+			margin: 0 auto;
+			width: 300px;
+
+			@include below($br-768) {
+				width: 100%;
+			}
+		}
+		.confirmation__wrapper {
+			display: flex;
+			.confirmation__icon__wrapper {
+				margin-right: 15px;
+			}
+			.confirmation__icon {
+				background-color: $secondaryColor;
+				border-radius: 50%;
+				box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+				height: 25px;
+				position: relative;
+				width: 25px;
+				svg {
+					height: 14px;
+					width: 14px;
+					@include centre;
+				}
+			}
+			.confirmation__data {
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}

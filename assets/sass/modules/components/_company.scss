@@ -1,0 +1,53 @@
+.company__wrapper {
+    border: 1px solid $lightBlue;
+    margin-bottom: 25px;
+    &.padding {
+        padding: 25px;
+    }
+    h2 {
+        font-size: 18px;
+        color: $tertiaryColor;
+    }
+    &.text {
+        display: flex;
+        flex-direction: row;
+        @include below($br-768) {
+            flex-direction: column;
+            .contentleft {
+                margin-bottom: 25px;
+            }
+        }
+        @include above($br-768) {
+            .contentleft {
+                border-right: 1px solid #F4F4F4; 
+                padding-right: 20px;
+            }
+            .contentright {
+                padding-left: 20px;
+            }
+        }
+        .flex {
+            flex: 1;
+        }
+    }
+    .data__numbers {
+        display: flex;
+        .data {
+            margin-right: 15px;
+            p {
+                margin:0px;
+            }
+            span {
+                color: $tertiaryColor; 
+                font-size: 10px;
+                display:block;
+                margin: 0px;
+            }
+        }
+    }
+}
+//GOOGLE MAP
+#map {
+    height:372px;
+    width:100%;
+}

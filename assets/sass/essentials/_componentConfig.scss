@@ -1,0 +1,38 @@
+.c {
+    &__sectionPadding {
+        padding: relSize(50, 15) 0;
+    }
+    &__standardtile {
+        background-color: $secondaryColor;
+        padding: relSize(25, 15);
+        text-align: center;
+        margin-bottom: relSize(25,15);
+        box-shadow: 0px 1px 3px rgba(0, 0,0, 0.1);
+        text-align: left;
+        &.alt {
+            padding: 0px;
+        }
+        h2 {
+            color: $tertiaryColor;
+            font-size: 20px;
+        }
+        .tileheader {
+            display: flex;
+            justify-content: space-between;
+            > div {
+                flex: 1;
+            }
+            > div:nth-child(2) {
+                text-align: right;
+            }
+            &.verticalcenter {
+                align-items: center;
+                margin-bottom: 20px;
+                h2, p {
+                    margin: 0px;
+                    color: $tertiaryColor;
+                }
+            }
+        }
+    }
+}

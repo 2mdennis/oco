@@ -1,0 +1,98 @@
+#carousel {
+    position: relative;
+    .carousel__wrapper {
+        padding: 0px 50px;
+        .services {
+            background-color: $secondaryColor;
+            border: 1px solid $lightBlue;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            color: $tertiaryColor;
+            display: flex;
+            border-radius: 15px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            margin: 10px 20px;
+            p {
+                margin: 15px 0px 0px 0px;
+            }
+            &:hover {
+                border: 1px solid $tertiaryColor;
+            }
+        }
+        .article {
+            background-color: $secondaryColor;
+            border: 1px solid $lightBlue;
+            cursor: pointer;
+            color: $tertiaryColor;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            min-height: 125px;
+            margin: 10px 20px;
+            p {
+                margin: 0px;
+            }
+            &:hover {
+                border: 1px solid $tertiaryColor;
+            }
+        }
+        .engage {
+            background-color: $secondaryColor;
+            border: 1px solid $lightBlue;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+            margin: 10px;
+            img {
+                height: 60px;
+                width: 60px;
+                border: 1px solid $lightBlue;
+                border-radius: 50%;
+                margin-bottom: 32px;
+            }
+            .name {
+                color: $tertiaryColor;
+            }
+            .btn {
+                margin-top: 32px;
+            }
+            p {
+                margin: 0px;
+            }
+            &:hover {
+                border: 1px solid $tertiaryColor;
+            }
+        }
+    }
+    .carousel__left, .carousel__right {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        top: 55%;
+        -webkit-transform: translate(0, -50%);
+        -ms-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        cursor: pointer;
+        svg {
+            color: #c2e8f9;
+            &:hover {
+                color: $tertiaryColor;
+            }
+        }
+    }
+    .carousel__left {
+        left: 0px;
+    }
+    .carousel__right {
+        right: 0px;
+    }
+}

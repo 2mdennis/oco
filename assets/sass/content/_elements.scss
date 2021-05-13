@@ -1,0 +1,30 @@
+//Misc
+img {
+	display: inline-block;
+	max-width: 100%;
+	width: auto;
+}
+blockquote {
+	border-left: 1px solid $tertiaryColor;
+	color: $tertiaryColor;
+	font-size: 1.733333333333333em;
+	font-style: normal;
+	line-height: 1.2em;
+	margin: 1.923076923076923em 0;
+	padding: 0.5769230769230769em;
+}
+hr {
+	background-color: $lightBlue;
+	border: 0;
+	height: 1px;
+	margin: 1.5em 0;
+	&.subsplit {
+		margin: 3em auto;
+	}
+}
+fieldset {
+	border: 0;
+}
+legend {
+	display: none;
+}

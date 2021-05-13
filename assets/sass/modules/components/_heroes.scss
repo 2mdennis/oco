@@ -1,0 +1,21 @@
+//Prefix
+////c__hero
+
+.hero {
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $tertiaryColor;
+    display: flex;
+    padding: relSize(40, 16) 0;
+    text-align: center;
+    @include below($br-768) {
+        align-items: flex-start;
+    }
+    @include above($br-768) {
+        &.alt {
+            padding-bottom: 120px;
+        }
+    }
+}

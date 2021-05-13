@@ -1,0 +1,53 @@
+.breadcrumbs {
+    @include below($br-768) {
+        display: none;
+    }
+    color: $primaryColor;
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        margin: 0;
+        padding: 0;
+        &:not(:last-child) {
+            padding-right: 24px;
+            position: relative;
+            &::after {
+                content: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' overflow='visible' viewBox='0 0 2.7 2.7'%3E%3Ccircle cx='1.4' cy='1.4' r='1.4' fill='%23a3a3a3'/%3E%3C/svg%3E");
+                position: absolute;
+                right: 10px;
+                height: 4px;
+                top: -1px;
+                transform: translateY(-50%);
+                width: 4px;
+            }
+        }
+    }
+    a, span {
+        cursor: pointer;
+        display: block;
+        font-size: 12px;
+        text-decoration: none;
+        .home {
+            width: 20px;
+            height: 15px;
+            margin-top:1px;
+            color: #a3a3a3;
+            &:hover {
+                color: $tertiaryColor;
+            }
+        }
+    }
+    a {
+        color: #A3A3A3;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    span {
+        color: $tertiaryColor;
+    }
+}

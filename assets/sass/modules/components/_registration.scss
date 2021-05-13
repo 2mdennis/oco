@@ -1,0 +1,185 @@
+//Prefix
+////c__hero
+
+#registration {
+	h1,
+	h2,
+	p {
+		color: $secondaryColor;
+	}
+	h1 {
+		font-size: relSize(50, 15);
+		margin-bottom: 40px;
+		text-transform: uppercase;
+		font-family: $altFontFamily;
+		@include below($br-768) {
+			font-size: relSize(35, 15);
+			margin-bottom: 30px;
+		}
+	}
+	h2 {
+		margin-bottom: 15px;
+	}
+	.progress__bar {
+		padding: 0px 0px 20px 0px;
+	}
+	.registration__form__wrapper {
+		background-color: rgba(191, 203, 230, 0.8);
+		border-radius: 15px;
+		box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.4);
+		padding: 40px;
+		.icon {
+			height: 70px;
+			margin-bottom: 10px;
+			width: 70px;
+		}
+		.title {
+			margin-bottom: 15px;
+			margin-top: 25px;
+			font-weight: bold;
+			&:first-child {
+				margin-top: 0px;
+			}
+		}
+		.summary__section {
+			@include below($br-768) {
+				margin-bottom: 50px;
+			}
+		}
+		form {
+			margin: 0 auto;
+			width: 300px;
+			@include below($br-768) {
+				width: 100%;
+			}
+		}
+		.confirmation__wrapper {
+			display: flex;
+			.confirmation__icon__wrapper {
+				margin-right: 15px;
+			}
+			.confirmation__icon {
+				background-color: $secondaryColor;
+				border-radius: 50%;
+				height: 25px;
+				position: relative;
+				width: 25px;
+				svg {
+					height: 14px;
+					width: 14px;
+					@include centre;
+				}
+			}
+			.confirmation__data {
+				p {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+.tags {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	.tag {
+		background-color: white;
+		cursor: pointer;
+		width: fit-content;
+		border-radius: 25px;
+		padding: 0px 12px;
+		margin: 8px 5px 0px 0px;
+		position: relative;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+		&:hover {
+			background-color: $tertiaryColor;
+			color: $secondaryColor;
+			svg {
+				color: $secondaryColor;
+			}
+		}
+		&.alt {
+			background-color: $tertiaryColor;
+			color: $secondaryColor;
+			svg {
+				color: $secondaryColor;
+			}
+			&:hover {
+				background-color: $secondaryColor;
+				color: $tertiaryColor;
+				svg {
+					color: $tertiaryColor;
+				}
+			}
+		}
+		span {
+			padding-right: 10px;
+			font-size: 10px;
+		}
+		a {
+			position: absolute;
+			top: 0px;
+			right: 8px;
+			svg {
+				height: 8px;
+				width: 8px;
+				color: $tertiaryColor;
+			}
+		}
+	}
+}
+
+// .progress__bar {
+//     overflow: hidden;
+//     counter-reset: step;
+//     padding: 25px 0px;
+//     li {
+//         list-style-type: none;
+//         color: white;
+//         text-transform: uppercase;
+//         font-size: 9px;
+//         width: 20%;
+//         float: left;
+//         position: relative;
+//         &::before {
+//             content: counter(step);
+//             counter-increment: step;
+//             width: 35px;
+//             line-height: 35px;
+//             display: block;
+//             font-size: 16px;
+//             color: white;
+//             background:rgba(191, 203, 230, 0.75);
+//             border-radius: 50%;
+//             margin: 0 auto;
+//             z-index: 1;
+//             position: relative;
+//         }
+//         &::after {
+//             content: '';
+//             width: 100%;
+//             height: 2px;
+//             background:rgba(191, 203, 230, 0.75);
+//             position: absolute;
+//             left: -50%;
+//             top: 16px;
+//             z-index: 0; /*put it behind the numbers*/
+//         }
+//         &:first-child:after {
+//             /*connector not needed before the first step*/
+//             content: none;
+//         }
+//         &.active:before {
+//             width: 50px;
+//             line-height: 50px;
+//             margin-top: -9px;
+//             font-size: 20px;
+//             box-shadow: 0px 0px 0px 10px rgba(191, 203, 230, 0.75);
+//         }
+//         &.active:before, &.active:after{
+//             background: white;
+//             color: $tertiaryColor;
+//         }
+//     }
+// }

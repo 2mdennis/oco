@@ -1,0 +1,188 @@
+.tile {
+	&__wrapper {
+		background-color: $secondaryColor;
+		box-shadow: 0px 6px 7px rgba(0, 0, 0, 0.2);
+		padding: 25px 25px 0px 25px;
+		margin-bottom: 25px;
+		&:last-child {
+			margin-bottom: 0px;
+		}
+	}
+	&__details {
+		margin-bottom: 20px;
+		color: $tertiaryColor;
+		p {
+			color: $tertiaryColor;
+			margin: 0px;
+		}
+		svg {
+			width: 38px;
+			height: 38px;
+			margin-right: 10px;
+		}
+	}
+	&__block {
+		flex: 0 0 auto;
+		margin: 0px 10px 20px 10px;
+		padding: 25px;
+		position: relative;
+		background-blend-mode: overlay;
+		background-position: bottom;
+		background-color: rgba(0, 0, 0, 0.7);
+		&:first-child {
+			margin-left: 0px;
+		}
+		&:last-child {
+			margin-right: 0px;
+		}
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		&--small {
+			min-height: 275px;
+		}
+		&--big {
+			min-height: 350px;
+		}
+		h2 {
+			color: $tertiaryColor;
+		}
+		p {
+			color: white;
+			flex-grow: 1;
+		}
+	}
+	&__main {
+		margin-bottom: 25px;
+		display: flex;
+		flex-direction: row;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		@include below($br-768) {
+			flex-direction: column-reverse;
+		}
+		.content {
+			width: 50%;
+			@include below($br-768) {
+				width: 100%;
+			}
+			background-color: $primaryColor;
+			padding: 20px;
+			h1 {
+				margin-bottom: 5px;
+			}
+			h1,
+			p {
+				color: $secondaryColor;
+			}
+			p:last-child {
+				margin-bottom: 0px;
+			}
+			span {
+				color: #a0a0a0;
+				display: block;
+				margin-bottom: 10px;
+			}
+		}
+		.image {
+			width: 50%;
+			@include below($br-768) {
+				width: 100%;
+			}
+			img {
+				height: 100%;
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	&__small {
+		background-color: $secondaryColor;
+		box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+		@include below($br-1366) {
+			margin-bottom: 25px;
+		}
+		.image {
+			position: relative;
+			span {
+				position: absolute;
+				bottom: -10px;
+				left: 0px;
+				font-size: 10px;
+				background-color: $tertiaryColor;
+				color: $secondaryColor;
+				padding: 0px 5px 0px 5px;
+			}
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+		.content {
+			padding: 25px 10px 10px 10px;
+			@include below($br-768) {
+				padding: 25px 10px 10px 10px;
+			}
+			h2 {
+				font-size: 16px;
+			}
+			p {
+				margin: 0px;
+			}
+		}
+	}
+	&__timeline {
+		border: 1px solid $lightBlue;
+		padding: 25px;
+		height: 100%;
+		@include below($br-1024) {
+			margin-bottom: 25px;
+			height: auto;
+		}
+		> div {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 25px;
+		}
+		svg {
+			color: $tertiaryColor;
+			height: 30px;
+			width: 30px;
+			margin-bottom: 5px;
+		}
+	}
+	&__add {
+		border: 1px solid $lightBlue;
+		padding: 25px;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__workplace {
+		background-color: $secondaryColor;
+		border: 1px solid $lightBlue;
+		box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+		cursor: pointer;
+		color: $tertiaryColor;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 23px;
+		margin-bottom: 20px;
+		svg {
+			width: 50px;
+			height: 50px;
+		}
+		p {
+			margin: 15px 0px 0px 0px;
+		}
+		&:hover {
+			border: 1px solid $tertiaryColor;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+#toggleFilter{
+    display: none;
+    &.active {
+        display:block;
+        @include below($br-768) {
+         position: relative;
+        }
+    }
+}
+#toggleAddFilter{
+    display: none;
+    &.active {
+        display:block;
+    }
+}
+#toggleToolsFilter{
+    display: none;
+    &.active {
+        display:block;
+    }
+}
+.dropdown {
+    &__section {
+        position:relative;
+    }
+    &__filterwrapper {
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        @include below($br-768) {
+            top: 42px;
+        }
+    }
+    &__addwrapper {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
+    &__companywrapper {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        right: 0px;
+    }
+    &__content {
+        background-color: $secondaryColor;
+        color: $tertiaryColor;
+        box-shadow: 0px 6px 7px rgba(0,0,0,.2);
+        width: 600px;
+        padding: 25px 50px;
+        position:absolute;
+        right: 0;
+        top: -40px;
+        text-align: center;
+        z-index:10;
+        &.alt {
+            background-color: $tertiaryColor;
+            color: $secondaryColor;
+            top: -40px;
+            text-align: left;
+            padding: 20px;
+            width: 350px;
+            p {
+                color: $secondaryColor !important;
+            }
+            .tools__close {
+                position: absolute;
+                right: 20px;
+                top: 18px;
+                cursor: pointer;
+                z-index: 9999;
+                svg {
+                    width: 10px;
+                    height: 10px;
+                    color: $secondaryColor;
+                    &:hover {
+                        color: $primaryColor;
+                    }
+                }
+            }
+        }
+        @include below($br-768) {
+            width: 100%;
+        }
+    }
+}

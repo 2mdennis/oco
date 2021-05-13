@@ -1,0 +1,38 @@
+.attendees {
+    h3 {
+        font-size: 15px;
+    }
+    .attendees__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        > div {
+            width: 33.3333%;
+            @include below($br-1024) {
+                width: 50%;
+            }
+            @include below($br-768) {
+                width: 100%;
+            }
+            > div {
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                span {
+                    background-color: #F0EEEF;
+                    min-height: 30px;
+                    border-radius: 15px;
+                    padding: 0px 10px;
+                    color: $primaryColor;
+                    display: flex;
+                    align-items: center;
+                    margin-right:  2px;
+                }
+                svg {
+                    height: 20px;
+                    width: 20px;
+                }
+            }
+        }
+            
+    }
+}

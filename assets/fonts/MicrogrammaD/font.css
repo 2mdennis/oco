@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'MICROGME';
+  src: url('MICROGME.eot');
+  src: url('MICROGME.eot?#iefix') format('embedded-opentype'),
+       url('MICROGME.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MicrogrammaD-MediExte';
+  src: url('MicrogrammaD-MediExte.svg#MicrogrammaD-MediExte') format('svg'),
+       url('MicrogrammaD-MediExte.ttf') format('truetype'),
+       url('MicrogrammaD-MediExte.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+

@@ -1,0 +1,618 @@
+@mixin col-mixin($l__col, $cols) {
+	$pixelVal: ($maxWidth / $cols) * $l__col;
+	width: percentage($pixelVal / $maxWidth);
+}
+@mixin offby-mixin($offBy) {
+	$pixelVal: ($maxWidth / $l__colNumber) * $offBy;
+	margin-left: percentage($pixelVal / $maxWidth);
+}
+@mixin offby-alt-mixin($offBy) {
+	$pixelVal: ($maxWidth / $l__colNumber) * $offBy;
+	margin-right: percentage($pixelVal / $maxWidth);
+}
+.l {
+    &__contain {
+        max-width: $maxWidth;
+        margin: 0 auto;
+        padding: $containerPadding;
+        width: 100%;
+        @include below($br-768) {
+            padding: 0px 15px;
+        }
+        &--small {
+            max-width: $smallMaxWidth;
+        }
+        &--full {
+            padding: 0;
+        }
+    }
+}
+.l__wrap {
+    position: relative;
+}
+.l__flexheight {
+    display: flex;
+    flex-wrap: wrap;
+}
+.l__flexheight--alt {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+.l__flexfull {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.l__image {
+    img {
+        @include above($br-1024) {
+            min-height: 460px;
+        }
+        @include below($br-1024) {
+            margin-top: relSize(40, 16);
+        }
+    }
+}
+.l__gridmaintain {
+    height: 100%;
+}
+@mixin resetRow {
+    @include below($br-1500) {
+        .l__row[data-1500*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-1500*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-1500*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-1500*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-1500*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include below($br-1366) {
+        .l__row[data-1366*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-1366*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-1366*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-1366*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-1366*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include below($br-1024) {
+        .l__row[data-1024*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-1024*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-1024*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-1024*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-1024*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include below($br-768) {
+        .l__row[data-768*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-768*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-768*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-768*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-768*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include below($br-480) {
+        .l__row[data-480*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-480*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-480*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-480*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-480*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+    @include below($br-360) {
+        .l__row[data-360*="flush"] {
+            margin: 0;
+            > .l__col, > .l__flexheight > .l__col {
+                > .l__col__evenpad {
+                    margin: 0;
+                }
+            }
+        }
+        .l__row {
+            &[data-360*="negative20"] {
+                margin: 0 -20px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 20px;
+                    }
+                }
+            }
+            &[data-360*="negative15"] {
+                margin: 0 -15px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 15px;
+                    }
+                }
+            }
+            &[data-360*="negative10"] {
+                margin: 0 -10px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 10px;
+                    }
+                }
+            }
+            &[data-360*="negative5"] {
+                margin: 0 -5px;
+                > .l__col, > .l__flexheight > .l__col {
+                    > .l__col__evenpad {
+                        margin: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.l__row {
+	clear: both;
+    &__negative5 {
+		margin: 0 -5px;
+        > .l__col, > .l__flexheight > .l__col {
+            > .l__col__evenpad {
+                margin: 0 5px;
+            }
+        }
+	}
+	&__negative10 {
+		margin: 0 -10px;
+        > .l__col, > .l__flexheight > .l__col {
+            > .l__col__evenpad {
+                margin: 0 10px;
+            }
+        }
+    }
+    &__negative15 {
+		margin: 0 -15px;
+        > .l__col, > .l__flexheight > .l__col {
+            > .l__col__evenpad {
+                margin: 0 15px;
+            }
+        }
+	}
+	&__negative20 {
+		margin: 0 -20px;
+        > .l__col, > .l__flexheight > .l__col {
+            > {
+                .l__col__evenpad {
+                    margin: 0 20px;
+                }
+            }
+        }
+	}
+	&__negative30 {
+		margin: 0 -30px;
+        > .l__col, > .l__flexheight > .l__col {
+            > .l__col__evenpad {
+                margin: 0 30px;
+            }
+        }
+	}
+    &__negative40 {
+		margin: 0 -40px;
+        > .l__col, > .l__flexheight > .l__col {
+            > .l__col__evenpad {
+                margin: 0 40px;
+            }
+        }
+	}
+    &__altlayout {
+        &.l__row {
+            > [class*="l__col"], .l__flexheight > [class*="l__col"] {
+                float: right;
+            }
+        }
+    }
+    @include resetRow;
+    &Flex {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &--center {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+.l__col {
+    &__evenpad {
+        margin: 0 10px;
+    }
+    &__five {
+        width: 20%;
+        @include below($br-1024) {
+            width:50%;
+        }
+    }
+    &__1, &__1-5, &__2, &__2-4, &__3, &__3-3, &__4, &__5, &__6, &__7, &__8, &__9, &__10, &__11, &__12, &__13, &__14, &__15, &__16, &__17, &__18, &__19, &__20, &__21, &__22, &__23, &__24 {
+        float: left;
+    }
+    @for $i from 1 through 12 {
+        &__#{$i} {
+            @include col-mixin($i, 12);
+            .l__rowFlex & {
+                flex-basis: ((100 / 12) * $i) * 1%;
+                flex-grow: 1;
+            }
+        }
+        &__offby#{$i} {
+            @include offby-mixin($i);
+        }
+    }
+    @include below($br-1500) {
+        @for $i from 1 through 12 {
+            &[data-1500="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-1500="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-1366) {
+        @for $i from 1 through 12 {
+            &[data-1366="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-1366="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-1024) {
+        @for $i from 1 through 12 {
+            &[data-1024="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-1024="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-768) {
+        @for $i from 1 through 12 {
+            &[data-768="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-768="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-480) {
+        @for $i from 1 through 12 {
+            &[data-480="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-480="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-360) {
+        @for $i from 1 through 12 {
+            &[data-360="#{$i}"] {
+                @include col-mixin($i, 12);
+                .l__rowFlex & {
+                    flex-basis: ((100 / 12) * $i) * 1%;
+                }
+            }
+            &[data-offby-360="#{$i}"] {
+                @include offby-mixin($i);
+            }
+        }
+    }
+    @include below($br-1500) {
+        &[data-offby-1366="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include below($br-1366) {
+        &[data-offby-1366="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include below($br-1024) {
+        &[data-offby-1024="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include below($br-768) {
+        &[data-offby-768="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include below($br-480) {
+        &[data-offby-480="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+    @include below($br-360) {
+        &[data-offby-360="0"] {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+@include resetRow;
+
+
+@include below($br-1024) {
+    [data-1024*="reverse"] {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@include below($br-768) {
+    [data-768*="reverse"] {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+@include below($br-480) {
+    [data-480*="reverse"] {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+.l__row__altlayout {
+	//Offsets
+    .l__col {
+        @for $i from 1 through 12 {
+            &__offby#{$i} {
+                @include offby-alt-mixin($i);
+            }
+            @include below($br-1500) {
+                &[data-offby-1366="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-1366="0"] {
+                    margin-right: 0;
+                }
+            }
+            @include below($br-1366) {
+                &[data-offby-1366="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-1366="0"] {
+                    margin-right: 0;
+                }
+            }
+            @include below($br-1024) {
+                &[data-offby-1024="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-1024="0"] {
+                    margin-right: 0;
+                }
+            }
+            @include below($br-768) {
+                &[data-offby-768="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-768="0"] {
+                    margin-right: 0;
+                }
+            }
+            @include below($br-480) {
+                &[data-offby-480="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-480="0"] {
+                    margin-right: 0;
+                }
+            }
+            @include below($br-360) {
+                &[data-offby-360="#{$i}"] {
+                    @include offby-alt-mixin($i);
+                }
+                &[data-offby-360="0"] {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

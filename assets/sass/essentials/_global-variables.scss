@@ -1,0 +1,47 @@
+//Global variables used for styles throughout the framework and for various calculations
+
+//PAGE BACKGROUND
+$bgcolor: #F3F3F3;
+
+//CONTENT CONTAINER
+$containerPadding: 0 25px;
+$totalContainerPadding: 40px;
+$maxWidth: 1936px;
+$smallMaxWidth: 885px;
+
+//SITEWIDE COLORS
+$primaryColor: #2F3030;
+$secondaryColor: rgb(255, 255, 255);
+$tertiaryColor: #127ABD;
+$textColor: #6D6B6D;
+$lightBlue: #C2E8F9;
+$green: #95e03f;
+$red: #D8000C;
+
+//FONT
+$mainFontFamily: 'Avenir', 'Aerial', sans-serif;
+$altFontFamily: 'MicrogrammaD', sans-serif;
+
+//BASE FONT SIZE
+$baseFontSize : 60.5%;
+$maxBodyFont: 1.3em;
+$minBodyFont: 1.2em;
+$fontSizePx: 15;
+
+////TITLE FONT SIZE
+$maxHeadSize: 39.81312;
+$diff: 0.8333341;
+
+//GOLDEN RATIO
+$ratio: 1.61803399;
+
+//GENERIC COLOR
+$errorColor: $red;
+$successColor: $green;
+
+//LAYOUT
+////Can be maximum 24
+$l__colNumber: 12;
+
+
+@import "mixins";
